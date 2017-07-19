@@ -1,18 +1,8 @@
-/*!
- * Particleground
- *
- * @author Jonathan Nicol - @mrjnicol
- * @version 1.1.0
- * @description Creates a canvas based particle system background
- *
- * Inspired by http://requestlab.fr/ and http://disruptivebydesign.com/
- */
-
 ;(function(window, document) {
   "use strict";
   var pluginName = 'particleground';
 
-  // http://youmightnotneedjquery.com/#deep_extend
+
   function extend(out) {
     out = out || {};
     for (var i = 1; i < arguments.length; i++) {
@@ -95,9 +85,6 @@
       hook('onInit');
     }
 
-    /**
-     * Style the canvas
-     */
     function styleCanvas() {
       canvas.width = element.offsetWidth;
       canvas.height = element.offsetHeight;
@@ -106,9 +93,7 @@
       ctx.lineWidth = options.lineWidth;
     }
 
-    /**
-     * Draw particles
-     */
+    
     function draw() {
       if (!canvasSupport) { return; }
 
@@ -133,9 +118,7 @@
       }
     }
 
-    /**
-     * Add/remove particles.
-     */
+    
     function resizeHandler() {
       // Resize the canvas
       styleCanvas();
@@ -167,9 +150,7 @@
       };
     }
 
-    /**
-     * Pause particle system
-     */
+   
     function pause() {
       paused = true;
     }
@@ -421,12 +402,6 @@
 
 })(window, document);
 
-/**
- * requestAnimationFrame polyfill by Erik Möller. fixes from Paul Irish and Tino Zijdel
- * @see: http://paulirish.com/2011/requestanimationframe-for-smart-animating/
- * @see: http://my.opera.com/emoller/blog/2011/12/20/requestanimationframe-for-smart-er-animating
- * @license: MIT license
- */
 (function() {
     var lastTime = 0;
     var vendors = ['ms', 'moz', 'webkit', 'o'];
